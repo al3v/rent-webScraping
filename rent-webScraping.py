@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 from smtplib import SMTP
@@ -8,7 +9,7 @@ base_url = "https://www.wg-gesucht.de/wg-zimmer-und-1-zimmer-wohnungen-und-wohnu
 
 # Email credentials
 sender_email = "l3vy.r3nt@gmail.com"
-sender_password = "iqkdwmllkqmnifpg"  # consider using environment variables for better security
+sender_password = os.getenv("SENDER_EMAIL_PASSWORD")  # Get password from environment variable
 receiver_email = "al3v.ayaz@gmail.com"
 
 def get_posts_from_page(page_url):
