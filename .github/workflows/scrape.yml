@@ -1,0 +1,21 @@
+name: Rental Scraper
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Runs every 30 minutes
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4
+    - name: Run scraper script
+      run: python rent-webScraping.py
