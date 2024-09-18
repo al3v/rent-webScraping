@@ -3,6 +3,7 @@ name: Rental Scraper
 on:
   schedule:
     - cron: '*/30 * * * *'  # Runs every 30 minutes
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   scrape:
