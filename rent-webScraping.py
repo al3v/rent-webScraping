@@ -55,4 +55,5 @@ def send_email_notification(new_posts):
     except Exception as e:
         print(f"Error while sending email: {e}")
 
-if
+if __name__ == "__main__":
+    check_for_new_posts()  # Remove the infinite loop and just run the scraper once
